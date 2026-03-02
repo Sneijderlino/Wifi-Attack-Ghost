@@ -1,0 +1,66 @@
+{
+  "name": "WiFi-Attack Ghost",
+  "version": "5.0",
+  "description": "Penetration Testing Framework untuk WiFi Network Security Research",
+  "author": {
+    "name": "Sneijderlino",
+    "email": "security@example.com",
+    "url": "https://github.com/Sneijderlino"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sneijderlino/Wifi-Attack-Ghost.git"
+  },
+  "license": "GPL-3.0-or-later",
+  "keywords": [
+    "wifi",
+    "penetration-testing",
+    "security",
+    "network",
+    "ethical-hacking",
+    "wireless",
+    "deauth",
+    "beacon-ghosting",
+    "aircrack",
+    "linux",
+    "termux",
+    "offensive-security"
+  ],
+  "scripts": {
+    "setup-linux": "bash setup-linux.sh",
+    "setup-termux": "bash setup-termux.sh",
+    "start": "sudo bash Wifi-Attack.sh"
+  },
+  "engines": {
+    "bash": ">=4.0",
+    "node": ">=14.0.0"
+  },
+  "operating-system": [
+    "linux",
+    "android-termux",
+    "windows-wsl2"
+  ],
+  "required-tools": [
+    "aircrack-ng",
+    "mdk4",
+    "wireless-tools",
+    "ethtool"
+  ],
+  "categories": [
+    "security",
+    "networking",
+    "pentesting",
+    "educational"
+  ],
+  "badges": {
+    "license": "GPL-3.0-or-later",
+    "platform": "Linux | Windows (WSL2) | Termux",
+    "status": "Active Development"
+  },
+  "disclaimer": "UNTUK PENGGUNAAN LEGAL DAN ETHICAL HACKING ONLY. Penulis tidak bertanggung jawab atas penyalahgunaan.",
+  "support": {
+    "email": "security@example.com",
+    "issues": "https://github.com/Sneijderlino/Wifi-Attack-Ghost/issues",
+    "discussions": "https://github.com/Sneijderlino/Wifi-Attack-Ghost/discussions"
+  }
+}

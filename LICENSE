@@ -1,0 +1,82 @@
+# License
+
+## GNU GENERAL PUBLIC LICENSE
+
+Version 3, 29 June 2007
+
+Copyright (C) 2024 Sneijderlino
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+
+---
+
+## RINGKASAN LISENSI (Tidak menggantikan lisensi resmi)
+
+### Hak Anda
+
+- ✅ Menggunakan program secara pribadi
+- ✅ Memodifikasi kode sesuai kebutuhan
+- ✅ Mendistribusikan salinan program
+- ✅ Mendistribusikan versi modifikasi
+
+### Kewajiban Anda
+
+- 📋 Menyertakan lisensi GPL pada distribusi
+- 📋 Mengungkapkan perubahan yang Anda buat
+- 📋 Menggunakan lisensi yang sama untuk modifikasi
+- 📋 Menyertakan sumber kode jika mendistribusikan
+
+### Disclaimer
+
+- ⚠️ Program disediakan "AS IS" tanpa garansi
+- ⚠️ Penulis tidak bertanggung jawab atas kerusakan
+- ⚠️ Penggunaan alat untuk aktivitas ilegal adalah tanggung jawab pengguna
+
+---
+
+## Untuk Lisensi Lengkap Lihat:
+
+https://www.gnu.org/licenses/gpl-3.0.html
+
+---
+
+## Informasi Kontribusi & Lisensi
+
+Dengan berkontribusi pada proyek ini, Anda setuju bahwa kontribusi Anda
+akan dilisensikan di bawah lisensi yang sama (GNU GPL v3.0).
+
+Jenis kontribusi yang menerima lisensi ini:
+
+- Kode Bash
+- Patch dan bugfix
+- Dokumentasi
+- Terjemahan
+
+---
+
+**Properti Third-Party:**
+
+Alat ini menggunakan:
+
+- aircrack-ng (GNU General Public License)
+- mdk4 (GNU General Public License)
+- Linux kernel (GNU General Public License)
+
+Lihat masing-masing project untuk lisensi detail mereka.
+
+---
+
+**Tanggal Efektif:** 2024
+**Versi Lisensi:** GNU GPL v3.0
+**Tahun Hak Cipta:** 2024-present

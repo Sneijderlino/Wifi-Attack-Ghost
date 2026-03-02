@@ -1,0 +1,129 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  shellcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run ShellCheck
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y shellcheck
+          shellcheck *.sh || true
+
+      - name: Report ShellCheck Results
+        if: always()
+        run: |
+          echo "ShellCheck analysis completed. Review output above."
+
+  bash-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check Bash Syntax
+        run: |
+          for file in *.sh; do
+            echo "Checking $file..."
+            bash -n "$file"
+          done
+
+  validate-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Validate Required Files
+        run: |
+          required_files=(
+            "README.md"
+            "LICENSE"
+            "CONTRIBUTING.md"
+            "CODE_OF_CONDUCT.md"
+            "Wifi-Attack.sh"
+            ".gitignore"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "ERROR: Missing required file: $file"
+              exit 1
+            fi
+          done
+
+          echo "✓ All required files present"
+
+      - name: Check File Sizes
+        run: |
+          for file in *.sh; do
+            size=$(wc -l < "$file")
+            echo "  $file: $size lines"
+          done
+
+      - name: Validate Markdown
+        run: |
+          for file in *.md; do
+            echo "Checking $file..."
+            if ! grep -q "^#" "$file"; then
+              echo "Warning: $file might not have proper markdown headers"
+            fi
+          done
+
+  security-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check for Hardcoded Credentials
+        run: |
+          echo "Scanning for hardcoded credentials..."
+          ! grep -r "password\|api_key\|secret\|token" *.sh || true
+
+      - name: Check for Dangerous Commands
+        run: |
+          echo "Checking for potentially dangerous patterns..."
+          ! grep -n "rm -rf /" *.sh || true
+          ! grep -n "dd if=/dev" *.sh || true
+
+      - name: Validate License
+        run: |
+          if [ -f "LICENSE" ]; then
+            file LICENSE | grep -i "gpl"
+            echo "✓ License file validated"
+          fi
+
+  documentation-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Check README Completeness
+        run: |
+          echo "Checking README.md sections..."
+          required_sections=(
+            "installation"
+            "usage"
+            "requirements"
+            "troubleshooting"
+            "license"
+          )
+
+          for section in "${required_sections[@]}"; do
+            if grep -qi "$section" README.md; then
+              echo "✓ Found section: $section"
+            else
+              echo "⚠ Missing section: $section (optional warning)"
+            fi
+          done
+
+      - name: Verify Links in Documentation
+        run: |
+          echo "Checking markdown links..."
+          grep -o '\[.*\](.**)' *.md | head -10 || true

@@ -1,0 +1,135 @@
+# .gitignore untuk WiFi-Attack Ghost
+
+# ==================== TEMPORARY FILES ====================
+# Log files
+*.log
+logs/
+*.txt
+!README.txt
+!TERMUX_NOTES.txt
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# ==================== SYSTEM FILES ====================
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ==================== WIFI ATTACK SPECIFIC ====================
+# Scan results
+/tmp/wifi_scan_*
+wifi_scan*
+*.csv
+scan_results/
+
+# Attack lists
+fake_list.txt
+target_list.txt
+*.list
+
+# Cracked files
+wordlists/downloaded/
+cracked/
+*.cap
+*.pcap
+
+# ==================== BACKUP FILES ====================
+*.backup
+*.bak
+*.old
+*_old/
+
+# ==================== CREDENTIALS / SENSITIVE ====================
+# Never commit credentials
+.env
+.env.local
+credentials.txt
+config.local.sh
+api_keys.txt
+
+# ==================== COMPILED/BINARY FILES ====================
+*.o
+*.elf
+*.so
+*.a
+
+# ==================== EDITOR FILES ====================
+.vim/
+.vscode/
+*.sublime-workspace
+*~
+.swp
+.swo
+
+# ==================== OS SPECIFIC ====================
+# Linux
+.kde/
+.gnome/
+.local/
+
+# Windows
+*.bat
+.Thumbs.db
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ==================== VIRTUAL ENVIRONMENTS ====================
+venv/
+env/
+ENV/
+.venv
+
+# ==================== NODE MODULES (untuk future web version) ====================
+node_modules/
+npm-debug.log
+package-lock.json
+
+# ==================== BUILD ARTIFACTS ====================
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+
+# ==================== USER-SPECIFIC ====================
+# User config files
+user-config.sh
+local.conf
+
+# Generated files
+generated/
+output/
+results/
+
+# ==================== DOCUMENTATION ====================
+# Don't ignore main docs
+!README.md
+!CONTRIBUTING.md
+!CODE_OF_CONDUCT.md
+!SECURITY.md
+
+# But ignore generated docs
+docs/generated/
+docs/build/
+
+# ==================== GITHUB ====================
+.github/workflows/secrets/
+.github/secrets/
+
+# ==================== ROOT-ONLY FILES ====================
+# Elevated privilege files (should use sudo)
+*.sudo
+elevated/
