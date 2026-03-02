@@ -1,6 +1,6 @@
 <!-- ==================== HEADER BANNER ==================== -->
 <div align="center">
-  <img src="img/sampel.png" alt="WiFi-Attack Ghost - Banner" width="100%" style="border-radius:12px; box-shadow:0 0 30px rgba(255,0,0,0.5); margin-bottom:20px;">
+  <img src="img/Sampel.png" alt="WiFi-Attack Ghost - Banner" width="100%" style="border-radius:12px; box-shadow:0 0 30px rgba(255,0,0,0.5); margin-bottom:20px;">
 </div>
 
 <!-- ==================== JUDUL UTAMA ==================== -->
